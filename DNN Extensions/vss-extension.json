@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "dnn-pipeline-tasks",
     "name": "DNN Pipeline Tasks",
-    "version": "2.0.0",
+    "version": "2.1.2",
     "publisher": "iowacomputergurus",
     "targets": [
         {
@@ -47,6 +47,9 @@
     "files": [
         {
             "path": "SetDnnVersionTask"
+        },
+        {
+            "path": "ExtractExtensionInstallerArtifacts"
         }
     ],
     "contributions": [
@@ -58,6 +61,16 @@
             ],
             "properties": {
                 "name": "SetDnnVersionTask"
+            }
+        },
+        {
+            "id": "extract-dnn-extension-install-artifects",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "ExtractExtensionInstallerArtifacts"
             }
         }
     ]

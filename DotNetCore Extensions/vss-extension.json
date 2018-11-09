@@ -1,0 +1,66 @@
+{
+    "manifestVersion": 1,
+    "id": "dotnetcore-pipeline-tasks",
+    "name": ".NET Core Pipeline Tasks",
+    "version": "2.0.1",
+    "publisher": "iowacomputergurus",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],    
+    "description": "Azure Pipeline tools to assist with DevOps when working with .NET Core based solutions.",
+    "categories": [
+        "Azure Pipelines"
+    ],
+    "icons": {
+        "default": "images/extension-icon.png"        
+    },
+    "tags": [
+        "dotnetcore",
+        "aspnetCore",
+        ".netCore",
+        "asp.net core",
+        "assembly patching"
+    ],
+    "content": {
+        "details": {
+            "path": "readme.md"
+        },
+        "license": {
+            "path": "license-terms.md"
+        }
+    },
+    "links": {
+        "home": {
+            "uri": "https://www.iowacomputergurus.com"
+        },
+        "support": {
+            "uri": "https://support.iowacomputergurus.com"
+        },
+        "repository": {
+            "uri": "https://github.com/IowaComputerGurus/Azure-DevOps-Extensions"
+        }
+    },
+    "repository": {
+        "type": "git",
+        "uri": "https://github.com/IowaComputerGurus/Azure-DevOps-Extensions"
+    },
+    "files": [
+        {
+            "path": "SetDotNetCoreAssemblyVersion"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "set-dot-net-core-assembly-version",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "SetDotNetCoreAssemblyVersion"
+            }
+        }
+    ]
+}

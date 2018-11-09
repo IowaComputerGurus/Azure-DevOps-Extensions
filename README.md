@@ -4,4 +4,5 @@ This repository houses a collection of useful Azure DevOps Pipeline Extensions t
 For more information on the items included, please see the respective package details
 
 * [DNN Pipeline Extensions](https://github.com/IowaComputerGurus/Azure-DevOps-Extensions/tree/master/DNN%20Extensions)
+* [.NET Core Pipeline Extensions](https://github.com/IowaComputerGurus/Azure-DevOps-Extensions/tree/master/DotNetCore%20Extensions)
 

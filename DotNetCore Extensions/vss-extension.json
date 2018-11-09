@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "dotnetcore-pipeline-tasks",
     "name": ".NET Core Pipeline Tasks",
-    "version": "2.0.1",
+    "version": "2.0.7",
     "publisher": "iowacomputergurus",
     "targets": [
         {
@@ -23,6 +23,7 @@
         "asp.net core",
         "assembly patching"
     ],
+    "galleryFlags":["Public"],
     "content": {
         "details": {
             "path": "readme.md"
@@ -49,6 +50,9 @@
     "files": [
         {
             "path": "SetDotNetCoreAssemblyVersion"
+        },
+        {
+            "path": "ScriptEfMigrations"
         }
     ],
     "contributions": [
@@ -60,6 +64,16 @@
             ],
             "properties": {
                 "name": "SetDotNetCoreAssemblyVersion"
+            }
+        },
+        {
+            "id": "azure-devops-efcore-script-task",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "ScriptEfMigrations"
             }
         }
     ]

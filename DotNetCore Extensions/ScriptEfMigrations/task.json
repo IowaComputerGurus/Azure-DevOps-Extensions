@@ -16,8 +16,8 @@
     "author": "IowaComputerGurus, Inc.",
     "version": {
         "Major": 2,
-        "Minor": 0,
-        "Patch": 0
+        "Minor": 1,
+        "Patch": 8
     },
     "releaseNotes": "Initial public release",
     "showEnvironmentVariables": true,
@@ -61,23 +61,30 @@
             "required": false,
             "helpMarkDown": "If this is true, this task will create a script that can be executed regardless of the DB status",
             "groupName": "advanced"
+        },
+        {
+            "name": "patchForIdempotentIndexBug",
+            "type": "boolean",
+            "label": "Patch Generated Script For Index Bug",
+            "defaultValue": "true",
+            "required": false,
+            "helpMarkDown": "A bug has been logged #12911 where the generated script isn't always Idempotent, if selected we will attempt to patch to fix this",
+            "groupName": "advanced",
+            "visibleRule": "createAsIdempotent = true"
         }
     ],
-    "instanceNameFormat": "Command Line Script",
+    "instanceNameFormat": "Script EFCore Migrations",
     "execution": {
         "PowerShell3": {
-            "target": "cmdline.ps1",
+            "target": "ScriptEfMigrations.ps1",
             "platforms": [
                 "windows"
             ]
         }
     },
     "messages": {
-        "EchoInputs": "%s set to: %s",
+        "EchoInputs": "{0} set to: {1}",
         "GeneratingScript": "Generating script.",
-        "ScriptText": "Script text: %s",
-        "JS_ExitCode": "Bash exited with code '%s'.",
-        "JS_Stderr": "Bash wrote one or more lines to the standard error stream.",
         "PS_ExitCode": "Cmd.exe exited with code '{0}'.",
         "PS_UnableToDetermineExitCode": "Unexpected exception. Unable to determine the exit code from cmd.exe.",
         "ScriptContents": "Script contents:",

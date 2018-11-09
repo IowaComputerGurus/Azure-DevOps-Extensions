@@ -6,3 +6,10 @@ For more information on the items included, please see the respective package de
 * [DNN Pipeline Extensions](https://github.com/IowaComputerGurus/Azure-DevOps-Extensions/tree/master/DNN%20Extensions)
 * [.NET Core Pipeline Extensions](https://github.com/IowaComputerGurus/Azure-DevOps-Extensions/tree/master/DotNetCore%20Extensions)
 
+# Installation
+
+To install either of these extensions you will want to visit their listings on the Azure Marketplace
+
+* [DNN Pipeline Extensions](https://marketplace.visualstudio.com/items?itemName=iowacomputergurus.dnn-pipeline-tasks)
+* [.NET Core Pipeline Extensions](https://marketplace.visualstudio.com/items?itemName=iowacomputergurus.dotnetcore-pipeline-tasks)
+

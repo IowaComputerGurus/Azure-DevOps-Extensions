@@ -1,0 +1,65 @@
+{
+    "manifestVersion": 1,
+    "id": "csharp-pipeline-tasks",
+    "name": "C#  Pipeline Tasks",
+    "version": "2.1.0",
+    "publisher": "iowacomputergurus",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],    
+    "description": "Azure Pipeline tools to assist with DevOps when working with C# based solutions.",
+    "categories": [
+        "Azure Pipelines"
+    ],
+    "icons": {
+        "default": "images/extension-icon.png"        
+    },
+    "tags": [
+        "C#",
+        "Assembly Info",
+        "Version Patching"
+    ],
+    "galleryFlags":["Public"],
+    "content": {
+        "details": {
+            "path": "readme.md"
+        },
+        "license": {
+            "path": "license-terms.md"
+        }
+    },
+    "links": {
+        "home": {
+            "uri": "https://www.iowacomputergurus.com"
+        },
+        "support": {
+            "uri": "https://support.iowacomputergurus.com"
+        },
+        "repository": {
+            "uri": "https://github.com/IowaComputerGurus/Azure-DevOps-Extensions"
+        }
+    },
+    "repository": {
+        "type": "git",
+        "uri": "https://github.com/IowaComputerGurus/Azure-DevOps-Extensions"
+    },
+    "files": [
+        {
+            "path": "PatchAssemblyInfo"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "set-csharp-assembly-version",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "PatchAssemblyInfo"
+            }
+        }
+    ]
+}

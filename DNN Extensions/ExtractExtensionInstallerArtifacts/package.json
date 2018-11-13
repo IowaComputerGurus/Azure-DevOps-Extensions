@@ -1,6 +1,6 @@
 {
   "name": "extract-extension-installer-artifact-task",
-  "version": "2.0.0",
+  "version": "2.2.1",
   "description": "Azure Pipelines Task to Copy DNN Extension Artifacts",
   "main": "copyfiles.js",
   "author": "IowaComputerGurus",

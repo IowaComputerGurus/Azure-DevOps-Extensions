@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "csharp-pipeline-tasks",
     "name": "C#  Pipeline Tasks",
-    "version": "2.1.0",
+    "version": "2.2.0",
     "publisher": "iowacomputergurus",
     "targets": [
         {

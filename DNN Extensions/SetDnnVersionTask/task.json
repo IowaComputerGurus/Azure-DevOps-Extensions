@@ -8,7 +8,7 @@
     "author": "IowaComputerGurus, Inc.",
     "version": {
         "Major": 2,
-        "Minor": 2,
+        "Minor": 3,
         "Patch": 0
     },
     "instanceNameFormat": "Set DNN Manifest Version",

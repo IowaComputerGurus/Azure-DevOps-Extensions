@@ -20,13 +20,13 @@ Once all .csproj files have been identified the task will look for a default 0.0
 
 This task should be used before compilation to ensure that .NET Core will include your version number in the compiled assemblies.
 
-### Failure Conditions
+### Errors & Warnings
 
-This task assumes that at least one .csproj file exists inside the source tree.  If no .csproj files are located the task will fail.
-
-### Warning Conditions
-
-This task assumes that it will be able to replace the version number on all assemblies.  If it is unable to replace the version number, a warning will be logged, but the task will succeed.
+Condition | Result | Detail
+--- | --- | ---
+Extension Version Invalid | Error | Version must be 3 segments divided by .
+Unable to locate any .csproj files | Error | Project assumes that at least one file was found
+Unable to update version | Warning | This can occur if your manifest does not have the required version template noted above
 
 
 ## Script EF Core Migrations

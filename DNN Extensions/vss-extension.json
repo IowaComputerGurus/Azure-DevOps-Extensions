@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "dnn-pipeline-tasks",
     "name": "DNN Pipeline Tasks",
-    "version": "2.1.3",
+    "version": "2.2.0",
     "publisher": "iowacomputergurus",
     "targets": [
         {

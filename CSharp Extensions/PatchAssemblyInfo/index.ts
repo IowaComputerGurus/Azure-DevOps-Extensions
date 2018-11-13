@@ -21,13 +21,6 @@ async function run() {
 			tl.setResult(tl.TaskResult.Failed, tl.loc("InvalidVersion", assemblyVersion));
             return;
 		}
-
-		//Add on to the version # if it was set to the short version
-		var shortVersionNumberExpression = new RegExp('^[0-9]{1,2}\.[0-9]{1,2}\.[0-9]{1,2}$');
-		if(shortVersionNumberExpression.test(assemblyVersion)){
-			console.log(tl.loc("UpdatingVersion"));
-			assemblyVersion = assemblyVersion + '.*';
-		}
 		
 		//Display progress
 		console.log(tl.loc("LookingIn", sourceDirectory));

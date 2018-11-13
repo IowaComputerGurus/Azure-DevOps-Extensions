@@ -3,25 +3,26 @@ This collection of tasks includes helpful Azure DevOps pipeline utilities that w
 
 ## Included Tasks
 
-* [Set DNN Module Version](#set-dnn-module-version)
+* [Set DNN Manifest Version Task](#set-dnn-manifest-version)
 * [Copy DNN Extension Artifacts](#copy-dnn-extension-artifacts)
 
-## Set DNN Module Version
+## Set DNN Manifest Version Task
 
 This task was created to recursively search a directory and identify all .dnn manifest files.  For each found monifest file it will look for a version number definition and will update.  It must find the version number in one of the following formats.
 
-* xx.xx.xx
-* 00.00.00
+* version="xx.xx.xx"
+* version="00.00.00"
 
-This allows you to explicitly set versions on modules that need to not be updated.
+This allows you to explicitly set versions on modules that need to not be updated, and avoids any possible incorrect replacements in other manifest locations.
 
-### Warnings Only
+### Errors & Warnings
 
-This task was implemented with a desire to only warn, not stop build, if a replacement token was not found.  Therefore, if no dnn manifests are found, or if no replacements are found, it simply warns.
+Condition | Result | Detail
+--- | --- | ---
+Extension Version Invalid | Error | Version must be 3 segments divided by .
+Unable to locate any .dnn manifest | Warning | Notification that no work was completed
+Unable to update version | Warning | This can occur if your manifest does not have the required version token
 
-### Future Changes
-
-Future releases of this task might include an "expected count" of files or otherwise that would allow a failure to be identified.
 
 ## Copy DNN Extension Artifacts
 
@@ -38,4 +39,10 @@ The settings are the same as the Microsoft provided items, and retain the help l
 * Clean Target Folder: True
 * Overwrite: False
 * Flatten Folders: True (This places all extensions in the root of the folder, regardless of source directory)
+
+### Errors & Warnings
+
+Condition | Result | Details
+--- | --- | ---
+No installers found | Error | This project expects that at least 1 artifact is found for publish.
 

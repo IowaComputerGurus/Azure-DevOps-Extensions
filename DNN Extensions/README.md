@@ -8,12 +8,9 @@ This collection of tasks includes helpful Azure DevOps pipeline utilities that w
 
 ## Set DNN Manifest Version Task
 
-This task was created to recursively search a directory and identify all .dnn manifest files.  For each found monifest file it will look for a version number definition and will update.  It must find the version number in one of the following formats.
+This task was created to recursively search a directory and identify all .dnn manifest files.  For each found monifest file it will look for a version number definition inside of a 'package' element and will update it to the proper version. This replacement will work with any version defined in either 00.00.00 or 0.0.0 format.
 
-* version="xx.xx.xx"
-* version="00.00.00"
-
-This allows you to explicitly set versions on modules that need to not be updated, and avoids any possible incorrect replacements in other manifest locations.
+This allows you to manage revisions locally if needed, but will adjust the version to be proper during build.
 
 ### Errors & Warnings
 

@@ -29,20 +29,17 @@ async function run() {
 			tl.setResult(tl.TaskResult.SucceededWithIssues, "Job completed but no work found");
 			return;
 		}
-
+		
+		var replacementSectionExpression = new RegExp(/(<package .*)(version\=\"[0-9]{1,2}\.[0-9]{1,2}\.[0-9]{1,2}\")(.*\>)/gi);
 		matchedPaths.forEach((file: string) => {
 			fs.readFile(file, "utf8", function(err, data) {
 
-				//Perform replacements
-				var updatedData = data.replace('version="xx\.xx\.xx"', 'version="' + manifestVersion + '"');
-				updatedData = updatedData.replace('version=\"00\.00\.00\"', 'version="' + manifestVersion + '"');
-
-				//validate that we found it to replace
-				if(updatedData == data)
-				{
+				if(!replacementSectionExpression.test(data)){
 					tl.warning('Unable to find version for replacement in file: ' + file);
 				}
 				else{
+					//Perform replacements
+					var updatedData = data.replace(replacementSectionExpression, '$1version="' +  manifestVersion + '"$3');
 					fs.writeFile(file, updatedData, function(err){
 						if(err){
 							tl.setResult(tl.TaskResult.Failed, err.message);
@@ -53,6 +50,8 @@ async function run() {
 						console.log('    ' + file + ' updated successfully');
 					})
 				}
+
+				
 			}); 
 		});
 
@@ -62,5 +61,4 @@ async function run() {
         tl.setResult(tl.TaskResult.Failed, err.message);
     }
 }
-
 run();

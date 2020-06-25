@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "dotnetcore-pipeline-tasks",
     "name": ".NET Core Pipeline Tasks",
-    "version": "2.2.0",
+    "version": "2.3.0",
     "publisher": "iowacomputergurus",
     "targets": [
         {

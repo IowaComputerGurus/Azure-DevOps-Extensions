@@ -40,6 +40,7 @@ This task was designed to be as flexible as possible for the caller but limiting
 Setting | Purpose | Required | Default
 --- | --- | --- | --- | ---
 DB Context Project Directory | The directory path to your project containing the DBContext | Yes | (Not Set)
+Context Name | The name of your DB Context if you have more than one | No | (Not Set)
 Startup Project Directory | Optional directory to use for startup, helpful for complex projects with settings in a different project | No | (Not Set)
 Script Target Location | Where the generated script will be placed, and what it is named | Yes | $(build.artifactstagingdirectory)\Migrations\script.sql
 Create as Idempotent Script | If this is set to true the script will be created as idempotent, or re-runnable | No | True

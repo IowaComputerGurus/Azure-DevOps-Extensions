@@ -16,10 +16,10 @@
     "author": "IowaComputerGurus, Inc.",
     "version": {
         "Major": 2,
-        "Minor": 2,
-        "Patch": 8
+        "Minor": 3,
+        "Patch": 1
     },
-    "releaseNotes": "Initial public release",
+    "releaseNotes": "Updated release with addition support for EF Core",
     "showEnvironmentVariables": true,
     "groups": [
         {
@@ -36,6 +36,14 @@
             "defaultValue": "",
             "required": true,
             "helpMarkDown": "The path to the project containing the DB Context.  Exaample: $(Build.SourcesDirectory)\\Source\\MyProject.Data"
+        },
+        {
+            "name": "contextName",
+            "type": "string",
+            "label": "DB Context Name",
+            "defaultValue": "",
+            "required": false,
+            "helpMarkDown": "If your project has multiple DB Context objects you can use this input to specify the -context parameter during scripting"
         },
         {
             "name": "startupProjectDirectory",

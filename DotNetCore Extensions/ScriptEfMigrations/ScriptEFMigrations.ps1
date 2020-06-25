@@ -8,6 +8,7 @@ try {
     # Get inputs.
     $input_createAsIdempotent = Get-VstsInput -Name 'createAsIdempotent' -AsBool -Require
     $input_contextProjectDirectory = Get-VstsInput -Name 'contextProjectDirectory' -Require
+    $input_contextName = Get-VstsInput -Name 'contextName'
     $input_scriptTargetLocation = Get-VstsInput -Name 'scriptTargetLocation' -Require
     $input_startupProjectDirectory = Get-VstsInput -Name 'startupProjectDirectory'
     $input_patchForIdempotentIndexBug = Get-VstsInput -Name 'patchForIdempotentIndexBug' -Require
@@ -21,6 +22,7 @@ try {
 
     #Write out items
     Write-Host -Message (Get-VstsLocString -Key 'EchoInputs' -ArgumentList 'contextProjectDirectory', $input_contextProjectDirectory)
+    Write-Host -Message (Get-VstsLocString -Key 'EchoInputs' -ArgumentList 'contextName', $input_contextName)
     Write-Host -Message (Get-VstsLocString -Key 'EchoInputs' -ArgumentList 'scriptTargetLocation', $input_scriptTargetLocation)
     Write-Host -Message (Get-VstsLocString -Key 'EchoInputs' -ArgumentList 'startupProjectDirectory', $input_startupProjectDirectory)
     Write-Host -Message (Get-VstsLocString -Key 'EchoInputs' -ArgumentList 'createAsIdempotent', $input_createAsIdempotent)
@@ -30,6 +32,9 @@ try {
     $contents = "dotnet ef migrations script -p " + $input_contextProjectDirectory + " -o " + $input_scriptTargetLocation;
         if($input_startupProjectDirectory){
             $contents = $contents + " --startup-project " + $input_startupProjectDirectory;
+        }
+        if($input_contextName){
+            $contents = $contents + " -context " + $input_dbContext
         }
         if($input_createAsIdempotent){
             $contents = $contents + " -i"

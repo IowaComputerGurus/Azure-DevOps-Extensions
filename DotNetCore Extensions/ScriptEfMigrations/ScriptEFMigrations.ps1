@@ -11,7 +11,7 @@ try {
     $input_contextName = Get-VstsInput -Name 'contextName'
     $input_scriptTargetLocation = Get-VstsInput -Name 'scriptTargetLocation' -Require
     $input_startupProjectDirectory = Get-VstsInput -Name 'startupProjectDirectory'
-    $input_patchForIdempotentIndexBug = Get-VstsInput -Name 'patchForIdempotentIndexBug' -Require
+    $input_patchForIdempotentIndexBug = Get-VstsInput -Name 'patchForIdempotentIndexBug' -AsBool -Require
 
     #Verify that items needed are directories
     Assert-VstsPath -LiteralPath $input_contextProjectDirectory -PathType 'Container'
@@ -26,6 +26,7 @@ try {
     Write-Host -Message (Get-VstsLocString -Key 'EchoInputs' -ArgumentList 'scriptTargetLocation', $input_scriptTargetLocation)
     Write-Host -Message (Get-VstsLocString -Key 'EchoInputs' -ArgumentList 'startupProjectDirectory', $input_startupProjectDirectory)
     Write-Host -Message (Get-VstsLocString -Key 'EchoInputs' -ArgumentList 'createAsIdempotent', $input_createAsIdempotent)
+    Write-Host -Message (Get-VstsLocString -Key 'EchoInputs' -ArgumentList 'patchForIdempotentIndexBug', $input_patchForIdempotentIndexBug)
 
     # Generate the script contents.
     Write-Host (Get-VstsLocString -Key 'GeneratingScript')

@@ -1,1 +1,27 @@
+## Build
+
+First you need to build the tasks, for this package you only need to build the "SetDotNetCoreAssemblyVersion" task. 
+
+Ensure that you have needed items
+
+npm install -g typescript 
+
+Then restore packages
+
+npm install
+
+Then build, if you changed anything
+
+tsc index.ts 
+
+## Publishing
+
+To publish this extension package, ensure that you have incremented the version numbers and that you have built the TS project.
+
+Additionally also ensure that the tool is installed using
+
+npm i -g tfx-cli
+
+Then use the following to create it
+
 tfx extension create --manifest-globs vss-extension.json
